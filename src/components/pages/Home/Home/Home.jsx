@@ -1,4 +1,4 @@
-import logo2 from "../../../../assets/more/3.png";
+
 import InstaSection from "../../shared/InstaSection/InstaSection";
 import CoffeeCard from "../../shared/cofeeCard/CoffeeCard";
 
@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="relative">
       <div>
-        <img src={logo2} alt="" />
+        <img src="https://i.ibb.co/nnQZc9C/3.png" alt="" />
 
         <div className=" text-center text-neutral-content">
           <div className=" w-3/5 absolute inset-2/4 top-52 text-justify ">

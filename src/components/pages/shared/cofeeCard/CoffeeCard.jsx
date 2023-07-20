@@ -1,14 +1,11 @@
-import icon1 from "../../../../assets/icons/1.png";
-import icon2 from "../../../../assets/icons/2.png";
-import icon3 from "../../../../assets/icons/3.png";
-import icon4 from "../../../../assets/icons/4.png";
+
 const CoffeeCard = () => {
   return (
     <div className="bg-[color:#ECEAE3] p-7">
       <div className="flex mx-auto px-16 gap-5">
       
         <div className=" w-80 ">
-          <img src={icon1}  alt="" />
+          <img src="https://i.ibb.co/Ns9gwy1/1.png"  alt="" />
 
           <div>
             <h2 className="card-title my-3">Awesome Aroma</h2>
@@ -18,7 +15,7 @@ const CoffeeCard = () => {
           </div>
         </div>
         <div className=" w-80 ">
-          <img src={icon2} alt="" />
+          <img src="https://i.ibb.co/jM3Cqw6/2.png" alt="" />
 
           <div>
             <h2 className="card-title my-3">High Quality</h2>
@@ -27,7 +24,7 @@ const CoffeeCard = () => {
           </div>
         </div>
         <div className=" w-80 ">
-          <img src={icon3} alt="" />
+          <img src="https://i.ibb.co/qYC027h/3.png" alt="" />
 
           <div>
             <h2 className="card-title my-3">Pure Grades</h2>
@@ -36,7 +33,7 @@ const CoffeeCard = () => {
           </div>
         </div>
         <div className=" w-80 ">
-          <img src={icon4} alt="" />
+          <img src="https://i.ibb.co/MCcFfxR/4.png" alt="" />
 
           <div>
             <h2 className="card-title my-3">Proper Roasting</h2>
