@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleAddCoffee = (event) => {
@@ -36,7 +37,12 @@ const AddCoffee = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("Coffee Added Successfully!");
+          Swal.fire({
+            title: 'Success!',
+            text: 'Coffee Added Successfully!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
         }
       });
   };
