@@ -50,7 +50,7 @@ const AddCoffee = () => {
     <div className="bg-[color:#F4F3F0] py-5 mb-20 ">
       <Link
         to="/"
-        className="flex align-middle items-center gap-3  my-5 ml-40 font-semibold text-[color:#374151]"
+        className="flex align-middle items-center gap-3  my-5 font-semibold text-[color:#374151]"
       >
         <BsArrowLeft /> Back to home
       </Link>

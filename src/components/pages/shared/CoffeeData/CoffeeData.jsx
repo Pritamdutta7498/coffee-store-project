@@ -6,7 +6,7 @@ import { BsArrowLeft } from "react-icons/bs";
 const CoffeeData = () => {
   const coffees = useLoaderData();
 
-  console.log(coffees);
+//   console.log(coffees);
   return (
     <div>
         <Link
