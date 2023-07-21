@@ -20,7 +20,7 @@ const UpdateCoffee = () => {
         const detail = form.detail.value;
         const category = form.category.value;
     
-        const newCoffee = {
+        const updatedCoffee = {
           name,
           supplier,
           category,
@@ -29,24 +29,23 @@ const UpdateCoffee = () => {
           detail,
           photo,
         };
-        console.log(newCoffee);
       
     
         // send data to the server
-        fetch("http://localhost:5000/coffee", {
-          method: "POST",
+        fetch(`http://localhost:5000/coffee/${_id}`, {
+          method: "PUT",
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(newCoffee),
+          body: JSON.stringify(updatedCoffee),
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            if (data.insertedId) {
+            if (data.modifiedCount > 0) {
               Swal.fire({
                 title: 'Success!',
-                text: 'Coffee Added Successfully!',
+                text: 'Coffee Updated Successfully!',
                 icon: 'success',
                 confirmButtonText: 'Ok'
               })
@@ -60,7 +59,7 @@ const UpdateCoffee = () => {
         to="/coffeeData"
         className="flex align-middle items-center gap-3  my-5 font-semibold text-[color:#374151]"
       >
-        <BsArrowLeft /> Back to home
+        <BsArrowLeft /> Back to Coffee data
       </Link>
       <div className="text-center w-3/5 mx-auto">
         <h3 className="text-2xl font-bold my-4 text-orange-700 drop-shadow-lg">
