@@ -1,8 +1,9 @@
 import { AiFillDelete, AiFillEdit, AiFillEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SingleCoffee = ({ coffee }) => {
-  const { _id, name, price, photo, category, quantity, supplier, detail } =
+  const { _id, name,  photo, quantity, supplier } =
     coffee;
 
   const handleDelete = (id) => {
@@ -47,10 +48,10 @@ const SingleCoffee = ({ coffee }) => {
             <p className="text-sky-500">
               <AiFillEye />
             </p>
-            <p className="text-yellow-500 my-4">
+            <Link to={`/updateCoffee/${_id}`} className="text-yellow-500 ">
               {" "}
-              <AiFillEdit />{" "}
-            </p>
+              <AiFillEdit className="my-3" />{" "}
+            </Link>
             <button onClick={() => handleDelete(_id)} className="text-red-500">
               {" "}
               <AiFillDelete />{" "}
