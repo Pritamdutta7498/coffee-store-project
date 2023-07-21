@@ -5,28 +5,31 @@ const SingleCoffee = ({ coffee }) => {
   const { _id, name, price, photo, category, quantity, supplier, detail } =
     coffee;
 
-    const handleDelete = id =>{
-        console.log(id);
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-            //   Swal.fire(
-            //     'Deleted!',
-            //     'Your file has been deleted.',
-            //     'success'
-            //   )
-
-            console.log("delete confirmed!");
+  const handleDelete = (id) => {
+    
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/coffee/${id}`, {
+            method:'DELETE'
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
             }
-          })
-    }
+          });
+      }
+    });
+  };
 
   return (
     <div className="">
@@ -41,10 +44,17 @@ const SingleCoffee = ({ coffee }) => {
             <p>Quantity: {quantity}</p>
           </div>
           <div className="font-bold text-2xl leading-10  w-40">
-            <p className="text-sky-500"><AiFillEye/></p>
-            <p className="text-yellow-500 my-4"> <AiFillEdit/> </p>
-            <button onClick={()=>handleDelete(_id)} className="text-red-500"> <AiFillDelete/> </button>
-           
+            <p className="text-sky-500">
+              <AiFillEye />
+            </p>
+            <p className="text-yellow-500 my-4">
+              {" "}
+              <AiFillEdit />{" "}
+            </p>
+            <button onClick={() => handleDelete(_id)} className="text-red-500">
+              {" "}
+              <AiFillDelete />{" "}
+            </button>
           </div>
         </div>
       </div>
