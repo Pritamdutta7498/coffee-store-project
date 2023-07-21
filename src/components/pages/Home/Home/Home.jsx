@@ -1,4 +1,5 @@
 
+import CoffeeData from "../../shared/CoffeeData/CoffeeData";
 import InstaSection from "../../shared/InstaSection/InstaSection";
 import CoffeeCard from "../../shared/cofeeCard/CoffeeCard";
 
@@ -27,6 +28,7 @@ const Home = () => {
         </div>
       </div>
       <CoffeeCard/>
+    <CoffeeData/>
       <InstaSection/>
      
 
