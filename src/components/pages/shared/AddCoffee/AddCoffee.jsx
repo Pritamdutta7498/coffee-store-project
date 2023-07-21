@@ -12,7 +12,22 @@ const AddCoffee = () => {
     const taste = form.taste.value;
     const detail = form.detail.value;
     const category = form.category.value;
-    console.log(name, supplier, quantity, photo, taste, detail, category);
+
+    const  newCoffee = {name, supplier, quantity, photo, taste, detail, category};
+    console.log(newCoffee);
+
+    // send data to the server
+    fetch('http://localhost:5000/coffee',{
+      method:'POST',
+      headers:{
+        "content-type" : "application/json"
+      },
+      body:JSON.stringify(newCoffee)
+    })
+    .then(res => res.send())
+    .then(data =>{
+      console.log(data);
+    })
   }
   return (
     <div className="bg-[color:#F4F3F0] py-5 mb-20 ">
@@ -119,3 +134,15 @@ const AddCoffee = () => {
 };
 
 export default AddCoffee;
+
+
+/* 
+----img link--------
+https://i.ibb.co/mHK7phT/4.png
+https://i.ibb.co/8g6Tpn7/5.png
+https://i.ibb.co/xmWMkwJ/6.png
+https://i.ibb.co/VQTwkSV/1.png
+https://i.ibb.co/YZ080Y7/2.png
+https://i.ibb.co/72Gb7ZX/3.png
+
+*/
